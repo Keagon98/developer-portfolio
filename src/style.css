@@ -29,21 +29,46 @@ body {
     overflow: hidden;
 }
 
-h1 {
-    font-size: 2em !important;
-    font-weight: var(--font-weight-700) !important;
+h1, h2, h3, h5 {
     color: var(--color-white);
 }
 
-h4 {
-    font-size: 1em !important;
+h1 {
+    font-size: 2em !important;
     font-weight: var(--font-weight-700) !important;
+}
+
+h2 {
+    font-size: 1.7em !important;
+}
+
+h2 {
+    font-weight: var(--font-weight-600) !important;
+}
+
+h3 {
+    font-size: 1.1em;
+}
+
+h3, h4 {
+    font-weight: var(--font-weight-500) !important;
+}
+
+h4 {
     color: var(--color-grey);
+}
+
+h4, h5 {
+    font-size: 1em !important;
 }
 
 a {
     font-weight: var(--font-weight-600) !important;
     text-decoration: none !important;
+}
+
+p {
+    color: var(--color-grey);
 }
 
 .bg-dark-400 {
@@ -52,6 +77,15 @@ a {
 
 .bg-dark-600 {
     background-color: var(--background-dark-600);
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.container {
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
 }
 
 

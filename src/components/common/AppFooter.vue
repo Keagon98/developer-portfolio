@@ -1,25 +1,27 @@
 <template>
     <footer>
         <nav class="footer-nav py-3">
-            <div class="col-md-12">
-                <div class="d-flex justify-content-center text-center">
-                    <div class="col">
-                        <router-link to="/">
-                            <font-awesome-icon icon="fa-solid fa-house" />
-                            <span>Home</span>
-                        </router-link>
-                    </div>
-                    <div class="col">
-                        <router-link to="/about">
-                            <font-awesome-icon icon="fa-solid fa-info-circle" />
-                            <span>About</span>
-                        </router-link>
-                    </div>
-                    <div class="col">
-                        <router-link to="/projects">
-                            <font-awesome-icon icon="fa-solid fa-cubes" />
-                            <span>Projects</span>
-                        </router-link>
+            <div class="container">
+                <div class="col-md-12">
+                    <div class="d-flex justify-content-center text-center">
+                        <div class="col">
+                            <router-link to="/">
+                                <font-awesome-icon icon="fa-solid fa-house" />
+                                <span>Home</span>
+                            </router-link>
+                        </div>
+                        <div class="col">
+                            <router-link to="/about">
+                                <font-awesome-icon icon="fa-solid fa-info-circle" />
+                                <span>About</span>
+                            </router-link>
+                        </div>
+                        <div class="col">
+                            <router-link to="/projects">
+                                <font-awesome-icon icon="fa-solid fa-cubes" />
+                                <span>Projects</span>
+                            </router-link>
+                        </div>
                     </div>
                 </div>
             </div>

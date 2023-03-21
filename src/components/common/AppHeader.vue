@@ -1,7 +1,7 @@
 <template>
     <header>
         <nav class="navbar">
-            <div class="container m-2">
+            <div class="container my-2">
                 <img class="navbar-brand" src="/keagon_logo.svg" alt="">
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -23,6 +23,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 9999;
     .navbar {
         .container {
             .navbar-brand {
