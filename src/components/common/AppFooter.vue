@@ -49,7 +49,7 @@ footer {
         }
 
         a {
-            font-size: .9em;
+            font-size: calc(14px + .1vw);
             color: #94A1B2;
 
             &:hover {
@@ -59,7 +59,7 @@ footer {
 
         svg {
             margin: 0 auto;
-            font-size: 1.5rem;
+            font-size: calc(18px + .2vw);
         }
     }
 }

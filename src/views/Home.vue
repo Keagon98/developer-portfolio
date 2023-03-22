@@ -74,7 +74,7 @@ main {
             .social-links {
                 margin: 1em 0;
                 svg {
-                    font-size: 2em;
+                    font-size: calc(25px + 1vw);
                     margin: 0 1.5em 0 0;
                     &.fa-square-github {
                         color: #FFFFFE;

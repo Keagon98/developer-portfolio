@@ -63,9 +63,9 @@ import { gsap } from 'gsap';
         const contentTextThree = ref(null);
 
         onMounted(() => {
-            const tl = gsap.timeline({ ease: "ease-in" });
+            const tl = gsap.timeline({ delay: 0.50, ease: "ease-in" });
 
-            tl.from(aboutHeader.value, { x: '+50', autoAlpha: 0, duration: 0.45 });
+            tl.from(aboutHeader.value, { x: '+55', autoAlpha: 0, duration: 0.50 });
             tl.from(contentTextOne.value, { y: '+30', autoAlpha: 0, duration: 0.35 });
             tl.from(contentTextTwo.value, { y: '+30', autoAlpha: 0, duration: 0.35 });
             tl.from(contentTextThree.value, { y: '+30', autoAlpha: 0, duration: 0.35 });

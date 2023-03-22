@@ -36,12 +36,14 @@ header {
                     border: 1px solid #2CB67D;
                     .nav-link {
                         color: #2CB67D;
-                        font-size: 12px;
+                        font-size: calc(12px + .1vw);
                         padding: 3px 10px;
+                        text-transform: uppercase;
+                        vertical-align: middle;
     
                         &:hover {
                             background-color: #2CB67D;
-                            color: #eeeeee;
+                            color: #16161A;
                         }
                     }
     
