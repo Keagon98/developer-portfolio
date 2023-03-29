@@ -46,75 +46,78 @@
 </template>
 
 <script lang="ts" setup>
-import AppLayout from '../layouts/AppLayout.vue';
-import AppTechStack from '../components/common/AppTechStack.vue';
-import CarouselSlider from '../components/carousel/CarouselSlider.vue';
+    import AppLayout from '../layouts/AppLayout.vue';
+    import AppTechStack from '../components/common/AppTechStack.vue';
+    import CarouselSlider from '../components/carousel/CarouselSlider.vue';
 
-import { onMounted, ref } from 'vue';
-import { gsap } from 'gsap';
+    import { onMounted, ref } from 'vue';
+    import { gsap } from 'gsap';
 
-        const appLayout = AppLayout;
-        const appTechStack = AppTechStack;
-        const carouselSlider = CarouselSlider;
-        
-        const aboutHeader = ref(null);
-        const contentTextOne = ref(null);
-        const contentTextTwo = ref(null);
-        const contentTextThree = ref(null);
-
-        onMounted(() => {
-            const tl = gsap.timeline({ delay: 0.50, ease: "ease-in" });
-
-            tl.from(aboutHeader.value, { x: '+55', autoAlpha: 0, duration: 0.50 });
-            tl.from(contentTextOne.value, { y: '+30', autoAlpha: 0, duration: 0.35 });
-            tl.from(contentTextTwo.value, { y: '+30', autoAlpha: 0, duration: 0.35 });
-            tl.from(contentTextThree.value, { y: '+30', autoAlpha: 0, duration: 0.35 });
-
-        });
-
-        const techStack = [
-            {
-                icon: 'javascript',
-                name: 'JavaScript'
-            },
-            {
-                icon: 'vuejs',
-                name: 'Vue JS'
-            },
-            {
-                icon: 'node-js',
-                name: 'Node JS'
-            },
-            {
-                icon: 'npm',
-                name: 'NPM'
-            },
-            {
-                icon: 'webpack',
-                name: 'Webpack'
-            },
-            {
-                icon: 'git-alt',
-                name: 'Git'
-            },
-            {
-                icon: 'bootstrap',
-                name: 'Bootstrap'
-            },
-            {
-                icon: 'docker',
-                name: 'Docker'
-            },
-            {
-                icon: 'typescript',
-                name: 'TypeScript'
-            },
-            {
-                icon: 'sass',
-                name: 'Sass'
-            },
-        ]      
+    const appLayout = AppLayout;
+    const appTechStack = AppTechStack;
+    const carouselSlider = CarouselSlider;
     
+    const aboutHeader = ref(null);
+    const contentTextOne = ref(null);
+    const contentTextTwo = ref(null);
+    const contentTextThree = ref(null);
+
+    onMounted(() => {
+        const tl = gsap.timeline({ delay: 0.50, ease: "ease-in" });
+
+        tl.from(aboutHeader.value, { x: '+55', autoAlpha: 0, duration: 0.50 });
+        tl.from(contentTextOne.value, { y: '+30', autoAlpha: 0, duration: 0.35 });
+        tl.from(contentTextTwo.value, { y: '+30', autoAlpha: 0, duration: 0.35 });
+        tl.from(contentTextThree.value, { y: '+30', autoAlpha: 0, duration: 0.35 });
+
+    });
+
+    const techStack = [
+        {
+            icon: 'javascript',
+            name: 'JavaScript'
+        },
+        {
+            icon: 'vuejs',
+            name: 'Vue JS'
+        },
+        {
+            icon: 'node-js',
+            name: 'Node JS'
+        },
+        {
+            icon: 'npm',
+            name: 'NPM'
+        },
+        {
+            icon: 'webpack',
+            name: 'Webpack'
+        },
+        {
+            icon: 'git-alt',
+            name: 'Git'
+        },
+        {
+            icon: 'bootstrap',
+            name: 'Bootstrap'
+        },
+        {
+            icon: 'docker',
+            name: 'Docker'
+        },
+        {
+            icon: 'typescript',
+            name: 'TypeScript'
+        },
+        {
+            icon: 'sass',
+            name: 'Sass'
+        },
+        {
+            icon: 'greensock',
+            name: 'GSAP'
+        },
+    ]      
 </script>
 
 <style lang="scss" scoped>

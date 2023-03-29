@@ -14,14 +14,10 @@
     </app-layout>
 </template>
 
-<script lang="ts">
-import AppLayout from '../layouts/AppLayout.vue';
+<script lang="ts" setup>
+    import AppLayout from '../layouts/AppLayout.vue';
 
-export default {
-    components: {
-        AppLayout
-    }
-}
+    const appLayout = AppLayout;
 </script>
 
 <style lang="scss" scoped>

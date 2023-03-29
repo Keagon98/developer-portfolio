@@ -6,6 +6,8 @@
 
     --color-white: #FFFFFE;
     --color-grey: #94A1B2;
+    --color-green: #2CB67D;
+    --color-purple: #7f5af0;
 
     --font-weight-200: 200;
     --font-weight-300: 300;
@@ -92,6 +94,19 @@ p {
 .container {
     -ms-overflow-style: none; 
     scrollbar-width: none;
+}
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background: var(--color-purple) !important;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-size: calc(20px + .1vw) !important;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: var(--color-purple) !important;
+    font-weight: var(--font-weight-600);
 }
 
 

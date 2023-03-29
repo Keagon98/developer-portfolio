@@ -34,6 +34,7 @@ header {
             .navbar-nav {
                 .nav-item {
                     border: 1px solid #2CB67D;
+                    border-radius: 2px;
                     .nav-link {
                         color: #2CB67D;
                         font-size: calc(12px + .1vw);
