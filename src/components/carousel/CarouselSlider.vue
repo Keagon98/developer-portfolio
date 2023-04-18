@@ -10,7 +10,7 @@
                         <swiper
                             :modules="modules"
                             :slides-per-view="1"
-                            :space-between="100"
+                            :space-between="0"
                             :pagination="{ type: 'progressbar' }"
                             :navigation="true"
                             @swiper="onSwiper"
@@ -18,23 +18,45 @@
                         >
                             <swiper-slide>
                                 <div class="slide-content-container">
-                                    <div class="slide-content-wrapper p-4">
-                                        <h4 class="slide-period text-center">2022 - Present</h4>
-                                        <h3 class="slide-header">Adept ICT - Junior Frontend Developer</h3>
-                                        <div class="slider-main-content">
+                                    <div class="slide-content-wrapper p-4 m-auto">
+                                        <div class="slide-header-wrapper my-4 text-center">
+                                            <h4 class="slide-period">2022 - Present</h4>
+                                            <h2 class="slide-header">Adept ICT - Junior Frontend Developer</h2>
+                                        </div>
+                                        <div class="slider-main-content px-4">
                                             <h5 class="slider-subheading">Frontend Duties</h5>
                                             <ul class="text-white">
-                                                <li>Lorem ipsum dolor sit amet.</li>
-                                                <li>Lorem ipsum dolor sit amet.</li>
-                                                <li>Lorem ipsum dolor sit amet.</li>
-                                                <li>Lorem ipsum dolor sit amet.</li>
+                                                <li>Maintaining the UI of our CRM platform</li>
+                                                <li>
+                                                    Troubleshooting, fixing and documenting any issues that may occur on the Frontend
+                                                </li>
+                                                <li>
+                                                    Discuss and give feedback to relevant stakeholders if any updates or new features are needed on the Frontend
+                                                </li>
+                                                <li>
+                                                    Thoroughly test newly implemented features and fixes in both a local and QA environment
+                                                </li>
+                                                <li>
+                                                    Consume RESTful APIs to perform various CRUD operations on the Frontend
+                                                </li>
+                                                <li>
+                                                    Design high fidelity prototypes for new UI components
+                                                </li>
                                             </ul>
                                             <h5 class="slider-subheading">Backend Duties</h5>
                                             <ul class="text-white">
-                                                <li>Lorem ipsum dolor sit amet.</li>
-                                                <li>Lorem ipsum dolor sit amet.</li>
-                                                <li>Lorem ipsum dolor sit amet.</li>
-                                                <li>Lorem ipsum dolor sit amet.</li>
+                                                <li>
+                                                    Building APIs which comply with the constraints of the REST architectural style
+                                                </li>
+                                                <li>
+                                                    Implementation of business logic
+                                                </li>
+                                                <li>
+                                                    Utilizing SQL to create and update Database tables
+                                                </li>
+                                                <li>
+                                                    Testing API endpoints in Postman to ensure that the API is designed to meet the goals set out by the business
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -42,23 +64,45 @@
                             </swiper-slide>
                             <swiper-slide>
                                 <div class="slide-content-container">
-                                    <div class="slide-content-wrapper p-4">
-                                        <h4 class="slide-period text-center">2022 - Present</h4>
-                                        <h3 class="slide-header">Adept ICT - Junior Frontend Developer</h3>
-                                        <div class="slider-main-content">
+                                    <div class="slide-content-wrapper p-4 m-auto">
+                                        <div class="slide-header-wrapper my-4 text-center">
+                                            <h4 class="slide-period">2022 - Present</h4>
+                                            <h2 class="slide-header">Adept ICT - Junior Frontend Developer</h2>
+                                        </div>
+                                        <div class="slider-main-content px-4">
                                             <h5 class="slider-subheading">Frontend Duties</h5>
                                             <ul class="text-white">
-                                                <li>Lorem ipsum dolor sit amet.</li>
-                                                <li>Lorem ipsum dolor sit amet.</li>
-                                                <li>Lorem ipsum dolor sit amet.</li>
-                                                <li>Lorem ipsum dolor sit amet.</li>
+                                                <li>Maintaining the UI of our CRM platform</li>
+                                                <li>
+                                                    Troubleshooting, fixing and documenting any issues that may occur on the Frontend
+                                                </li>
+                                                <li>
+                                                    Discuss and give feedback to relevant stakeholders if any updates or new features are needed on the Frontend
+                                                </li>
+                                                <li>
+                                                    Thoroughly test newly implemented features and fixes in both a local and QA environment
+                                                </li>
+                                                <li>
+                                                    Consume RESTful APIs to perform various CRUD operations on the Frontend
+                                                </li>
+                                                <li>
+                                                    Design high fidelity prototypes for new UI components
+                                                </li>
                                             </ul>
                                             <h5 class="slider-subheading">Backend Duties</h5>
                                             <ul class="text-white">
-                                                <li>Lorem ipsum dolor sit amet.</li>
-                                                <li>Lorem ipsum dolor sit amet.</li>
-                                                <li>Lorem ipsum dolor sit amet.</li>
-                                                <li>Lorem ipsum dolor sit amet.</li>
+                                                <li>
+                                                    Building APIs which comply with the constraints of the REST architectural style
+                                                </li>
+                                                <li>
+                                                    Implementation of business logic
+                                                </li>
+                                                <li>
+                                                    Utilizing SQL to create and update Database tables
+                                                </li>
+                                                <li>
+                                                    Testing API endpoints in Postman to ensure that the API is designed to meet the goals set out by the business
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -66,29 +110,50 @@
                             </swiper-slide>
                             <swiper-slide>
                                 <div class="slide-content-container">
-                                    <div class="slide-content-wrapper p-4">
-                                        <h4 class="slide-period text-center">2022 - Present</h4>
-                                        <h3 class="slide-header">Adept ICT - Junior Frontend Developer</h3>
-                                        <div class="slider-main-content">
+                                    <div class="slide-content-wrapper p-4 m-auto">
+                                        <div class="slide-header-wrapper my-4 text-center">
+                                            <h4 class="slide-period">2022 - Present</h4>
+                                            <h2 class="slide-header">Adept ICT - Junior Frontend Developer</h2>
+                                        </div>
+                                        <div class="slider-main-content px-4">
                                             <h5 class="slider-subheading">Frontend Duties</h5>
                                             <ul class="text-white">
-                                                <li>Lorem ipsum dolor sit amet.</li>
-                                                <li>Lorem ipsum dolor sit amet.</li>
-                                                <li>Lorem ipsum dolor sit amet.</li>
-                                                <li>Lorem ipsum dolor sit amet.</li>
+                                                <li>Maintaining the UI of our CRM platform</li>
+                                                <li>
+                                                    Troubleshooting, fixing and documenting any issues that may occur on the Frontend
+                                                </li>
+                                                <li>
+                                                    Discuss and give feedback to relevant stakeholders if any updates or new features are needed on the Frontend
+                                                </li>
+                                                <li>
+                                                    Thoroughly test newly implemented features and fixes in both a local and QA environment
+                                                </li>
+                                                <li>
+                                                    Consume RESTful APIs to perform various CRUD operations on the Frontend
+                                                </li>
+                                                <li>
+                                                    Design high fidelity prototypes for new UI components
+                                                </li>
                                             </ul>
                                             <h5 class="slider-subheading">Backend Duties</h5>
                                             <ul class="text-white">
-                                                <li>Lorem ipsum dolor sit amet.</li>
-                                                <li>Lorem ipsum dolor sit amet.</li>
-                                                <li>Lorem ipsum dolor sit amet.</li>
-                                                <li>Lorem ipsum dolor sit amet.</li>
+                                                <li>
+                                                    Building APIs which comply with the constraints of the REST architectural style
+                                                </li>
+                                                <li>
+                                                    Implementation of business logic
+                                                </li>
+                                                <li>
+                                                    Utilizing SQL to create and update Database tables
+                                                </li>
+                                                <li>
+                                                    Testing API endpoints in Postman to ensure that the API is designed to meet the goals set out by the business
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                             </swiper-slide>
-                            ...
                         </swiper>           
                     </div>
                 </div>
@@ -125,10 +190,10 @@
     const modules = [Navigation, Pagination, Scrollbar, A11y, EffectFade];
 
     const onSwiper = (swiper: any) => {
-        console.log(swiper);
+        
     };
     const onSlideChange = () => {
-        console.log('slide change');
+        
     };
 
     const slideData = [
@@ -157,6 +222,32 @@ section {
             .slide-content-wrapper {
                 background: #16161A;
                 border-radius: 2px;
+
+                .slide-header {
+                    font-size: calc(1.25em + .2vw) !important;
+                    font-weight: 700 !important;
+                }
+
+                .slider-main-content {
+                    overflow-y: scroll;
+                    width: 96%;
+                    max-height: 455px;
+
+                    .slider-subheading {
+                        font-size: calc(1.1em + .1vw) !important;
+                        color: #2CB67D;
+                        text-align: center;
+                        font-weight: 600 !important;
+                    }
+
+                    ul > li {
+                        font-size: calc(.65em + .2vw) !important;
+                        letter-spacing: 2px;
+                        line-height: 1.8;
+                        margin: 1em 0;
+                    }
+
+                }
             }
         }
     }

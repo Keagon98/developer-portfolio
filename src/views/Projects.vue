@@ -15,9 +15,18 @@
 </template>
 
 <script lang="ts" setup>
+    import { onBeforeMount } from 'vue';
     import AppLayout from '../layouts/AppLayout.vue';
 
+    import useAboutStore  from '../stores/aboutStore';
+
+    const store = useAboutStore();
+
     const appLayout = AppLayout;
+
+    onBeforeMount(() => {
+        store.fetchData(); 
+    })
 </script>
 
 <style lang="scss" scoped>

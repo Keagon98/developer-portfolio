@@ -48,6 +48,8 @@ footer {
         a {
             font-size: calc(14px + .1vw);
             color: #94A1B2;
+            width: 50%;
+            margin: 0 auto;
 
             &:hover {
                 color: #EEEEEE;

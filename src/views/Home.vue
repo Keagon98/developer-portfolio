@@ -27,8 +27,12 @@
 
 <script lang="ts" setup>
     import AppLayout from '../layouts/AppLayout.vue';
-    import { onMounted, ref } from 'vue';
+    import { onBeforeMount, onMounted, ref } from 'vue';
     import gsap from 'gsap';
+
+    import useAboutStore  from '../stores/aboutStore';
+
+    const store = useAboutStore();
 
     const appLayout = AppLayout;
 
@@ -37,7 +41,11 @@
     const landingHeadingThree = ref(null);
     const icon = ref(null);
 
-    onMounted(() => {
+    onBeforeMount(() => {
+        store.fetchData();
+    })
+
+    onMounted(() => {  
         const tl = gsap.timeline({ delay: .40, ease: "ease-in", stagger: 0.35 });
 
         tl.from(landingHeadingOne.value, { x: '+50', autoAlpha: 0, duration: 0.40 });

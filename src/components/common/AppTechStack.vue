@@ -3,10 +3,10 @@
         <div class="container">
             <div class="content-wrapper">
                 <div class="col-12">
-                    <div class="row my-2">
+                    <div class="row">
                         <h3 class="p-0" ref="techHeader">Tech Stack</h3>
                     </div>
-                    <div class="row my-2">
+                    <div class="row">
                         <div class="card col-6 col-md-4 col-xl-3" v-for="tech in techStack" :key="tech.name">
                             <div class="card-body text-center" ref="techCard">
                                 <div class="icon-svg">
@@ -56,7 +56,7 @@ section {
                 flex-direction: column;
                 border-radius: 2px;
                 background-color: #16161A;
-                margin: 0 1em 1em 0;
+                margin: 0 .5em .5em 0;
 
                 .icon-svg {
                     display: grid;

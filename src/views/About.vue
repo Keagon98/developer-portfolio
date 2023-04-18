@@ -11,18 +11,9 @@
                             <div class="row">
                                 <div class="col-12 col-md-12 col-lg-6">
                                     <div class="row">
-                                        <div class="main-content-text">
-                                            <p ref="contentTextOne">
-                                                I'm a developer based in the beautiful town of 
-                                                Gordons Bay, Western Cape.   
-                                            </p>
-                                            <p ref="contentTextTwo">
-                                                A simple guy who practices his simplistic character 
-                                                in the code he writes and in the designs he creates.
-                                            </p>
-                                            <p ref="contentTextThree">
-                                                As a Frontend Developer, I specialise in building fast, 
-                                                responsive and visually appealing web applications. 
+                                        <div class="main-content-text" v-for="text in aboutText" :key="text._key">
+                                            <p ref="contentText"> 
+                                                {{ text.text }}
                                             </p>
                                         </div>
                                     </div>
@@ -35,7 +26,6 @@
                                         <CarouselSlider />
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div> 
@@ -50,28 +40,35 @@
     import AppTechStack from '../components/common/AppTechStack.vue';
     import CarouselSlider from '../components/carousel/CarouselSlider.vue';
 
-    import { onMounted, ref } from 'vue';
+    import { onBeforeMount, onMounted, ref } from 'vue';
     import { gsap } from 'gsap';
 
+    import useAboutStore  from '../stores/aboutStore';
+
+    const store = useAboutStore();
+    
     const appLayout = AppLayout;
     const appTechStack = AppTechStack;
     const carouselSlider = CarouselSlider;
     
+    
     const aboutHeader = ref(null);
-    const contentTextOne = ref(null);
-    const contentTextTwo = ref(null);
-    const contentTextThree = ref(null);
+    const contentText = ref(null);
 
-    onMounted(() => {
+    let aboutText: any[] = store.contentArray;
+
+    onBeforeMount(() => {
+        store.fetchData();
+    })
+
+    onMounted(() => { 
         const tl = gsap.timeline({ delay: 0.50, ease: "ease-in" });
-
+        
         tl.from(aboutHeader.value, { x: '+55', autoAlpha: 0, duration: 0.50 });
-        tl.from(contentTextOne.value, { y: '+30', autoAlpha: 0, duration: 0.35 });
-        tl.from(contentTextTwo.value, { y: '+30', autoAlpha: 0, duration: 0.35 });
-        tl.from(contentTextThree.value, { y: '+30', autoAlpha: 0, duration: 0.35 });
+        tl.from(contentText.value, { y: '+30', autoAlpha: 0, duration: 0.35, stagger: 0.15});       
 
     });
-
+     
     const techStack = [
         {
             icon: 'javascript',
@@ -117,7 +114,8 @@
             icon: 'greensock',
             name: 'GSAP'
         },
-    ]      
+    ]   
+    
 </script>
 
 <style lang="scss" scoped>
