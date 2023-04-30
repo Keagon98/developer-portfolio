@@ -13,7 +13,9 @@
                             <div class="col-12">
                                 <div class="d-flex justify-content-start social-links">
                                     <div ref="icon" class="social-link-icon" v-for="icon in socialIcons" :key="icon.name">
-                                        <font-awesome-icon :icon="icon.icon" />
+                                        <a :href="icon.link" target="_blank">
+                                            <font-awesome-icon :icon="icon.icon" />
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -41,10 +43,6 @@
     const landingHeadingThree = ref(null);
     const icon = ref(null);
 
-    onBeforeMount(() => {
-        store.fetchData();
-    })
-
     onMounted(() => {  
         const tl = gsap.timeline({ delay: .40, ease: "ease-in", stagger: 0.35 });
 
@@ -57,16 +55,14 @@
     const socialIcons = [
         {
             name: 'github',
-            icon: 'fa-brands fa-square-github'
+            icon: 'fa-brands fa-square-github',
+            link: 'https://github.com/Keagon98'
         },
         {
             name: 'linkedIn',
-            icon: 'fa-brands fa-linkedin'
+            icon: 'fa-brands fa-linkedin',
+            link: 'https://www.linkedin.com/in/keagon-brinkhuis/'
         },
-        {
-            name: 'email',
-            icon: 'fa-solid fa-square-envelope'
-        }
     ]
 </script>
 
@@ -88,9 +84,6 @@ main {
                     }
                     &.fa-linkedin {
                         color: #0A66C2;
-                    }
-                    &.fa-square-envelope {
-                        color: #2CB67D;
                     }
                 }
             }

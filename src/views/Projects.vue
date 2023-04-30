@@ -24,9 +24,6 @@
 
     const appLayout = AppLayout;
 
-    onBeforeMount(() => {
-        store.fetchData(); 
-    })
 </script>
 
 <style lang="scss" scoped>

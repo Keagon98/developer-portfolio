@@ -3,24 +3,28 @@ import sanity  from '../client';
 
 const useAboutStore = defineStore('about', {
     state: () => ({
-        contentArray: [],
-        content: [],
+        aboutContent: [],
+        experienceContent: []
     }),
+    persist: true,
     actions: {
-        async fetchData() {
-            const query = `*[_type == "about"] { content }`;
-
+        async fetchAboutData() {
+            const query = `*[_type == 'about']`;
             await sanity.fetch(query).then(
                 (response) => {
-                    this.content = response[0].content;
-
-                    if (this.contentArray.length < 1) {
-                        this.content.forEach((c) => {
-                            this.contentArray.push(c.children[0]);
-                        });
-                    }
+                    response.forEach(obj => {
+                        this.aboutContent = obj.content.split(".", 3);
+                    })
             }).catch((error) => console.error(error));
-        },     
+        },
+        
+        async fetchExperienceData() {
+            const query = `*[_type == 'experience'] | order(unique_id asc)`;
+            await sanity.fetch(query).then(
+                (response) => {
+                    this.experienceContent = response;
+            }).catch((error) => console.error(error));
+        },  
     }
 });
 

@@ -5,19 +5,19 @@
                 <div class="col-md-12">
                     <div class="d-flex justify-content-center text-center">
                         <div class="col">
-                            <router-link to="/">
+                            <router-link :class="route.path === '/' ? 'active' : ''" to="/">
                                 <font-awesome-icon icon="fa-solid fa-house" />
                                 <span>Home</span>
                             </router-link>
                         </div>
                         <div class="col">
-                            <router-link to="/about">
+                            <router-link :class="route.path === '/about' ? 'active' : ''" to="/about">
                                 <font-awesome-icon icon="fa-solid fa-info-circle" />
                                 <span>About</span>
                             </router-link>
                         </div>
                         <div class="col">
-                            <router-link to="/projects">
+                            <router-link :class="route.path === '/projects' ? 'active' : ''" to="/projects">
                                 <font-awesome-icon icon="fa-solid fa-cubes" />
                                 <span>Projects</span>
                             </router-link>
@@ -30,6 +30,9 @@
 </template>
 
 <script lang="ts" setup>
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
 
 </script>
 
@@ -54,6 +57,10 @@ footer {
             &:hover {
                 color: #EEEEEE;
             }
+        }
+
+        .active {
+            color: #EEEEEE;
         }
 
         svg {

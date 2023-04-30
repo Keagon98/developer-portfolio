@@ -11,9 +11,9 @@
                             <div class="row">
                                 <div class="col-12 col-md-12 col-lg-6">
                                     <div class="row">
-                                        <div class="main-content-text" v-for="text in aboutText" :key="text._key">
+                                        <div class="main-content-text" v-for="text in data" :key="text">
                                             <p ref="contentText"> 
-                                                {{ text.text }}
+                                                {{ text }}.
                                             </p>
                                         </div>
                                     </div>
@@ -23,7 +23,7 @@
                                 </div>
                                 <div class="col-12 col-md-12 col-lg-6">
                                     <div class="row">
-                                        <CarouselSlider />
+                                        <CarouselSlider :experienceData="experienceData"/>
                                     </div>
                                 </div>
                             </div>
@@ -40,30 +40,34 @@
     import AppTechStack from '../components/common/AppTechStack.vue';
     import CarouselSlider from '../components/carousel/CarouselSlider.vue';
 
-    import { onBeforeMount, onMounted, ref } from 'vue';
+    import { onMounted, ref } from 'vue';
     import { gsap } from 'gsap';
 
     import useAboutStore  from '../stores/aboutStore';
 
     const store = useAboutStore();
+
+    console.log(store.aboutContent);
     
     const appLayout = AppLayout;
     const appTechStack = AppTechStack;
     const carouselSlider = CarouselSlider;
     
-    
     const aboutHeader = ref(null);
     const contentText = ref(null);
 
-    let aboutText: any[] = store.contentArray;
+    store.fetchAboutData();
+    store.fetchExperienceData();
 
-    onBeforeMount(() => {
-        store.fetchData();
-    })
+    const data:any = ref();
+    data.value = store.aboutContent;
+
+    const experienceData:any = ref();
+    experienceData.value = store.experienceContent;
 
     onMounted(() => { 
+
         const tl = gsap.timeline({ delay: 0.50, ease: "ease-in" });
-        
         tl.from(aboutHeader.value, { x: '+55', autoAlpha: 0, duration: 0.50 });
         tl.from(contentText.value, { y: '+30', autoAlpha: 0, duration: 0.35, stagger: 0.15});       
 

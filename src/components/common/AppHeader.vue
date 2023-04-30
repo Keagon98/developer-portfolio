@@ -5,7 +5,7 @@
                 <img class="navbar-brand" src="/keagon_logo.svg" alt="">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Get in touch</a>
+                        <a class="nav-link" href="mailto:keaggzb20v@gmail.com" target="_blank">Get in touch</a>
                     </li>
                 </ul>
             </div>
@@ -45,6 +45,7 @@ header {
                         &:hover {
                             background-color: #2CB67D;
                             color: #16161A;
+                            font-weight: bolder;
                         }
                     }
     
