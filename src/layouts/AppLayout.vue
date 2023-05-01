@@ -9,16 +9,15 @@
 </template>
 
 <script lang="ts" setup>
-import AppHeader from '../components/common/AppHeader.vue';
-import AppFooter from '../components/common/AppFooter.vue';
+    import AppHeader from '../components/common/AppHeader.vue';
+    import AppFooter from '../components/common/AppFooter.vue';
 
-const appFooter = AppFooter;
-const appHeader = AppHeader;
+    const appFooter = AppFooter;
+    const appHeader = AppHeader;
 
-const props = defineProps({
-    backgroundColor: String
-});
-
+    const props = defineProps({
+        backgroundColor: String
+    });
 </script>
 
 <style scoped>
