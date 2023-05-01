@@ -118,6 +118,14 @@
             icon: 'greensock',
             name: 'GSAP'
         },
+        {
+            icon: 'sanity-io',
+            name: 'Sanity.io'
+        },
+        {
+            icon: 'react',
+            name: 'React JS'
+        },
     ]   
     
 </script>

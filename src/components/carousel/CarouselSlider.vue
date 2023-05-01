@@ -25,37 +25,13 @@
                                         </div>
                                         <div class="slider-main-content px-4">
                                             <h5 class="slider-subheading">Frontend Duties</h5>
-                                            <ul class="text-white">
-                                                <li>Maintaining the UI of our CRM platform</li>
-                                                <li>
-                                                    Troubleshooting, fixing and documenting any issues that may occur on the Frontend
-                                                </li>
-                                                <li>
-                                                    Discuss and give feedback to relevant stakeholders if any updates or new features are needed on the Frontend
-                                                </li>
-                                                <li>
-                                                    Thoroughly test newly implemented features and fixes in both a local and QA environment
-                                                </li>
-                                                <li>
-                                                    Consume RESTful APIs to perform various CRUD operations on the Frontend
-                                                </li>
-                                                <li>
-                                                    Design high fidelity prototypes for new UI components
-                                                </li>
+                                            <ul class="text-white" v-for="duty in e.frontend_duties" :key="duty._key">
+                                                <li>{{ duty.children[0].text }}</li>
                                             </ul>
                                             <h5 class="slider-subheading">Backend Duties</h5>
-                                            <ul class="text-white">
+                                            <ul class="text-white" v-for="duty in e.backend_duties" :key="duty._key">
                                                 <li>
-                                                    Building APIs which comply with the constraints of the REST architectural style
-                                                </li>
-                                                <li>
-                                                    Implementation of business logic
-                                                </li>
-                                                <li>
-                                                    Utilizing SQL to create and update Database tables
-                                                </li>
-                                                <li>
-                                                    Testing API endpoints in Postman to ensure that the API is designed to meet the goals set out by the business
+                                                    {{ duty.children[0].text }}
                                                 </li>
                                             </ul>
                                         </div>
