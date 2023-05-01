@@ -21,7 +21,8 @@
                                     <div class="slide-content-wrapper p-4 m-auto">
                                         <div class="slide-header-wrapper my-4 text-center">
                                             <h4 class="slide-period">{{ e.years }}</h4>
-                                            <h2 class="slide-header">{{ e.company }} - {{ e.position }}</h2>
+                                            <h2 class="slide-header">{{ e.company }}</h2>
+                                            <h2 class="slide-header">{{ e.position }}</h2>
                                         </div>
                                         <div class="slider-main-content px-4">
                                             <h5 class="slider-subheading">Frontend Duties</h5>
@@ -144,6 +145,12 @@ section {
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: 991px)  {
+    .content-wrapper {
+        margin-top: 1em !important;
     }
 }
 </style>

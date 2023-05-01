@@ -4,9 +4,9 @@
             <div class="container px-4">
                 <div class="content-wrapper">
                     <div class="col-12">
-                            <div class="row header">
-                                <h2 ref="aboutHeader">About Me</h2>
-                            </div>
+                        <div class="header">
+                            <h2 ref="aboutHeader">About Me</h2>
+                        </div>
                         <div class="main-content">
                             <div class="row">
                                 <div class="col-12 col-md-12 col-lg-6">
@@ -46,8 +46,6 @@
     import useAboutStore  from '../stores/aboutStore';
 
     const store = useAboutStore();
-
-    console.log(store.aboutContent);
     
     const appLayout = AppLayout;
     const appTechStack = AppTechStack;

@@ -15,6 +15,9 @@ import { faCubes } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faCode } from '@fortawesome/free-solid-svg-icons';
+import { faSquareArrowUpRight } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faHouse);
 library.add(faInfoCircle);
@@ -22,6 +25,9 @@ library.add(faCubes);
 library.add(faLinkedin);
 library.add(faGithubSquare);
 library.add(faEnvelopeSquare);
+library.add(faChevronRight);
+library.add(faCode);
+library.add(faSquareArrowUpRight);
 
 
 import 'bootstrap/dist/css/bootstrap.css';

@@ -6,7 +6,7 @@
                     <div class="col-12">
                         <div class="row">
                             <div class="col-12">
-                                <h4 ref="landingHeadingOne">Hi, I'm Keagon Brinkhuis a</h4>
+                                <h4 ref="landingHeadingOne">Hi, I'm Keagon Brinkhuis.</h4>
                                 <h1 ref="landingHeadingTwo">Frontend Developer</h1>
                                 <h4 ref="landingHeadingThree">with a passion for UI development.</h4>
                             </div>
@@ -31,10 +31,6 @@
     import AppLayout from '../layouts/AppLayout.vue';
     import { onBeforeMount, onMounted, ref } from 'vue';
     import gsap from 'gsap';
-
-    import useAboutStore  from '../stores/aboutStore';
-
-    const store = useAboutStore();
 
     const appLayout = AppLayout;
 
