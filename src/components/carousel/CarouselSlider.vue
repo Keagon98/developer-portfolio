@@ -16,23 +16,23 @@
                             @swiper="onSwiper"
                             @slideChange="onSlideChange"
                         >
-                            <swiper-slide v-for="e in exp" :key="e._id">
+                            <swiper-slide v-for="exp in experienceData" :key="exp._id">
                                 <div class="slide-content-container">
                                     <div class="slide-content-wrapper p-4 m-auto">
                                         <div class="slide-header-wrapper my-4 text-center">
-                                            <h4 class="slide-period">{{ e.years }}</h4>
-                                            <h2 class="slide-header">{{ e.company }}</h2>
-                                            <h2 class="slide-header">{{ e.position }}</h2>
+                                            <h4 class="slide-period">{{ exp.years }}</h4>
+                                            <h2 class="slide-header">{{ exp.company }}</h2>
+                                            <h2 class="slide-header">{{ exp.position }}</h2>
                                         </div>
                                         <div class="slider-main-content px-4">
                                             <h5 class="slider-subheading">Frontend Duties</h5>
-                                            <ul class="text-white" v-for="duty in e.frontend_duties" :key="duty._key">
-                                                <li>{{ duty.children[0].text }}</li>
+                                            <ul class="text-white" v-for="duties in exp.frontend_duties" :key="duties._key">
+                                                <li>{{ duties.children[0].text }}</li>
                                             </ul>
                                             <h5 class="slider-subheading">Backend Duties</h5>
-                                            <ul class="text-white" v-for="duty in e.backend_duties" :key="duty._key">
+                                            <ul class="text-white" v-for="duties in exp.backend_duties" :key="duties._key">
                                                 <li>
-                                                    {{ duty.children[0].text }}
+                                                    {{ duties.children[0].text }}
                                                 </li>
                                             </ul>
                                         </div>
@@ -49,10 +49,12 @@
 
 <script lang="ts" setup>
     import { gsap } from 'gsap'
-    import { onMounted, ref } from 'vue'
+    import { computed, onMounted, ref, PropType } from 'vue'
 
     import { Navigation, Pagination, Scrollbar, A11y, EffectFade } from 'swiper'
     import { Swiper, SwiperSlide } from 'swiper/vue'
+
+    import Experience from '../../types/Experience'
 
     import 'swiper/css'
     import 'swiper/css/navigation'
@@ -60,15 +62,12 @@
     import 'swiper/css/scrollbar'
 
     const props = defineProps({
-        experienceData: Array
+        experienceData: {
+            type: Array as PropType<Experience[]>,
+            required: true
+        }
     });
-
-    const exp = ref();
-
-    exp.value = props.experienceData;
-
-    console.log(exp.value);
-
+ 
     const experienceHeader = ref(null);
     const experienceCard = ref(null);
 

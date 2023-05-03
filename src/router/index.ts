@@ -53,8 +53,13 @@ const routes = [
               content: 'The projects page of Keagon Brinkhuis portfolio web app. Showcases some of the projects I built.'
             }
           ]
-        }
+        },
     },
+    {
+      path: '/projects/detail/:id',
+      name: 'ProjectDetail',
+      component: () => import('../views/ProjectDetail.vue'),
+    }
 ]
 
 const router = createRouter({

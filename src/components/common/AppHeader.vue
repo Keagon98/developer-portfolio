@@ -46,6 +46,7 @@ header {
                             background-color: #2CB67D;
                             color: #16161A;
                             font-weight: bolder;
+                            transition: .5s ease-in-out;
                         }
                     }
     
