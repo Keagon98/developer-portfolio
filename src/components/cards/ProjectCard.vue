@@ -2,10 +2,10 @@
         <div class="card-wrapper">
             <div class="card">
                 <div class="card-header">
-                    <h4>Project Name</h4>
+                    <h4>{{ project.name }}</h4>
                 </div>
                 <div class="card-img-top">
-                    <img src="../../assets/mobile-applications.png" alt="">
+                    <img :src="CreateUrl(project.image)" alt="">
                 </div>
                 <div class="card-body">
                     <div class="card-tags-wrapper">
@@ -18,22 +18,34 @@
                         </div>
                     </div>
                     <div class="card-content">
-                        <p>This is a summary of this specific project. This project was built to showcase my skills.</p>
-                        <p>This is a summary of this specific project. This project was built to showcase my skills.</p>
+                        <p>{{ project.description }}</p>
                         <div class="content-read-more">
-                            <router-link to="/">Read More <font-awesome-icon icon="fa-solid fa-chevron-right" /></router-link>
+                            <router-link :to="`/projects/detail/${project.slug.current}`">Read More <font-awesome-icon icon="fa-solid fa-chevron-right" /></router-link>
                         </div>
                     </div>
                     <div class="card-buttons">
-                        <a class="btn-code" href="">Source Code <font-awesome-icon icon="fa-solid fa-code" /></a>
-                        <a class="btn-live" href="">Live App <font-awesome-icon icon="fa-solid fa-square-arrow-up-right" /></a>
+                        <a class="btn-code" href="">Code <font-awesome-icon icon="fa-solid fa-code" /></a>
+                        <a class="btn-live" href="">Live <font-awesome-icon icon="fa-solid fa-square-arrow-up-right" /></a>
                     </div>
                 </div>
             </div>
+            <router-view />
         </div>
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue';
+
+import { CreateUrl } from '../../helpers/utils';
+
+const props = defineProps({
+    proj: Object
+});
+
+const project = ref();
+project.value = props.proj;
+
+console.log(project.value);
 
 </script>
 
@@ -83,6 +95,11 @@
                 a {
                     color: #2CB67D;
                     font-size: calc(.9em + .1vw) !important;
+
+                    &:hover {
+                        color: #FFFFFF;
+                        transition: .3s ease-in-out;
+                    }
                 }
             }
 
@@ -98,6 +115,12 @@
                     padding: 10px 15px;
                     border-radius: 3px;
                     font-size: calc(.8em + .1vw) !important;
+
+                    &:hover {
+                        background-color: #FFFFFF;
+                        color: #16161A;
+                        transition: .5s ease-in-out;
+                    }
                 }
                 .btn-live {
                     background-color: #2CB67D;
@@ -105,6 +128,12 @@
                     padding: 10px 15px;
                     border-radius: 3px;
                     font-size: calc(.8em + .1vw) !important;
+
+                    &:hover {
+                        color: #2CB67D;
+                        background-color: #FFFFFF;
+                        transition: .5s ease-in-out;
+                    }
                 }
             }
         }

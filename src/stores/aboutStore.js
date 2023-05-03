@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import sanity  from '../client';
+import sanity from '../client';
 
 const useAboutStore = defineStore('about', {
     state: () => ({
