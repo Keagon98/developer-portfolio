@@ -5,16 +5,12 @@
                     <h4>{{ project.name }}</h4>
                 </div>
                 <div class="card-img-top">
-                    <img :src="CreateUrl(project.image)" alt="">
+                    <img :src="CreateUrl(project.image)" :alt="project.image.caption">
                 </div>
                 <div class="card-body">
                     <div class="card-tags-wrapper">
-                        <div class="card-tags">
-                            <span>React</span>
-                            <span>Material UI</span>
-                            <span>Django</span>
-                            <span>MySQL</span>
-                            <span>Microservice</span>
+                        <div class="card-tags" v-for="tag in project.tags" :key="tag">
+                            <span>{{ tag }}</span>
                         </div>
                     </div>
                     <div class="card-content">
@@ -45,8 +41,6 @@ const props = defineProps({
 const project = ref();
 project.value = props.proj;
 
-console.log(project.value);
-
 </script>
 
 <style lang="scss" scoped>
@@ -72,14 +66,14 @@ console.log(project.value);
         }
         .card-body {
             .card-tags-wrapper {
+                display: flex;
+                flex-wrap: wrap;
                 border-bottom: 2px solid #707070;
                 margin-bottom: 2em;
                 .card-tags {
-                    display: flex;
-                    flex-wrap: wrap;
                     align-items: center;
                     color: #FFFFFF;
-                    padding: 1em 0;
+                    margin: 0 0 1.2em;
 
                     span {
                         background-color: #16161A;
