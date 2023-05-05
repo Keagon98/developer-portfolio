@@ -7,7 +7,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <h4 ref="landingHeadingOne">Hi, I'm Keagon Brinkhuis.</h4>
-                                <h1 ref="landingHeadingTwo">Frontend Developer</h1>
+                                <h1 ref="landingHeadingTwo" title="Frontend Developer">Frontend Developer</h1>
                                 <h4 ref="landingHeadingThree">with a passion for UI development.</h4>
                             </div>
                             <div class="col-12">

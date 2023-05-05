@@ -1,11 +1,12 @@
 <template>
+    <router-view />
     <app-layout :backgroundColor="'bg-dark-600'">
         <main>
             <div class="container px-4">
                 <div class="content-wrapper">
                     <div class="col-12">
                         <div class="header">
-                            <h2 ref="projectHeader">Projects</h2>
+                            <h1 ref="projectHeader" title="Projects">Projects</h1>
                         </div>
                         <div class="main-content my-4">
                             <div class="col-12">
@@ -20,9 +21,8 @@
                     </div>
                 </div>
             </div>
-        </main>
+        </main>  
     </app-layout>
-    <router-view />
 </template>
 
 <script lang="ts" setup>
@@ -42,8 +42,6 @@
 
     const store = useProjectsStore();
     store.fetchProjectsData();
-
-    console.log(store.projectContent);
 
     let data: any[] = [];
     data = store.projectContent;

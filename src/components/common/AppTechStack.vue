@@ -8,7 +8,7 @@
                     </div>
                     <div class="row">
                         <div class="card col-6 col-md-4 col-xl-3" v-for="tech in techStack" :key="tech.name">
-                            <div class="card-body text-center" ref="techCard">
+                            <div class="card-body text-center" :class="backgroundColor" ref="techCard">
                                 <div class="icon-svg">
                                     <img class="mt-2" :src="`/icon-${tech.icon}.svg`" alt="" srcset="">
                                 </div>
@@ -27,7 +27,8 @@
     import { onMounted, ref } from 'vue';
 
     const props = defineProps({
-        techStack: Object
+        techStack: Object,
+        backgroundColor: String
     });
 
     const techHeader = ref(null);
@@ -55,7 +56,6 @@ section {
                 text-align: center;
                 flex-direction: column;
                 border-radius: 2px;
-                background-color: #16161A;
                 margin: 0 .5em .5em 0;
 
                 .icon-svg {

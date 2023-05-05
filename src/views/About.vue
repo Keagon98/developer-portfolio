@@ -5,7 +5,7 @@
                 <div class="content-wrapper">
                     <div class="col-12">
                         <div class="header">
-                            <h2 ref="aboutHeader">About Me</h2>
+                            <h1 ref="aboutHeader" title="About Me">About Me</h1>
                         </div>
                         <div class="main-content">
                             <div class="row">
@@ -18,7 +18,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <AppTechStack :techStack="techStack"/>
+                                        <AppTechStack :techStack="techStack" :backgroundColor="'bg-dark-600'"/>
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-12 col-lg-6">
