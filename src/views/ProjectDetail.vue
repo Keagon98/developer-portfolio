@@ -52,12 +52,12 @@
 <script setup lang="ts">
 import AppLayout from '../layouts/AppLayout.vue';
 import AppTechStack from '../components/common/AppTechStack.vue';
-import { onBeforeMount, onMounted, onUnmounted, ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import useProjectsStore from '../stores/projectStore';
 import Project from '../types/Project';
 import { gsap } from 'gsap';
-import sanity from '../client';
+import sanity from '../sanity/client'
 import imageUrlBuilder from '@sanity/image-url';
 
 
@@ -88,7 +88,6 @@ const builder = imageUrlBuilder(sanity);
 
 let url: String = "";
 const CreateUrl = (source: any) => {
-    console.log(builder.image(source).url());
     return url = builder.image(source).url();
 }
 
@@ -153,11 +152,6 @@ const techStack = [
             name: 'React JS'
         },
     ]   
-
-
-function beforeRouteEnter(to: any, from: any) {
-throw new Error('Function not implemented.');
-}
 </script>
 
 <style lang="scss" scoped>

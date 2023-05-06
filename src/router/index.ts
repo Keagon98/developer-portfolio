@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import sanity from '../client';
+
+import useProjectsStore from '../stores/projectStore';
 import Project from '../types/Project';
+
 
 const routes = [
     {
@@ -61,20 +63,24 @@ const routes = [
             path: 'detail/:id',
             name: 'ProjectDetail',
             component: () => import('../views/ProjectDetail.vue'),
-            beforeEnter: (to: any, from: any) => {
-                const query = `*[_type == 'projects' && slug.current == '${to.params.id}'][0]`;
-                let slug: String = '';
-                sanity.fetch(query).then(
-                    (response: any) => {
-                        slug = response.slug.current;
-                }).catch((error: any) => console.error(error));
+            beforeEnter: (to: any) => {
+              const pathParamsId:String = to.params.id;
+              const store = useProjectsStore();
+              const slugArry: any[] = [];
 
-                if (slug !== to.params.id) return {
-                  name: 'NotFound',
-                  params: { pathMatch: to.path.split('/').slice(1) },
-                  query: to.query,
-                  hash: to.hash
-                }
+              const slug = store.projectContent.forEach((s: Project) => {
+                slugArry.push(s.slug?.current);
+              })
+
+              const correctPath = slugArry.findIndex((s) => s === pathParamsId);
+
+              if (correctPath === -1) return {
+                name: 'NotFound',
+                params: { pathMatch: to.path.split('/').slice(1) },
+                query: to.query,
+                hash: to.hash
+              } 
+
             },
             meta: {
               title: 'Project Information | Keagon Brinkhuis - Frontend Developer',

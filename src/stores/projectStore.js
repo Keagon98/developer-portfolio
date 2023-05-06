@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import sanity from '../client';
+import sanity from '../sanity/client';
 
 const useProjectsStore = defineStore('projects', {
     state: () => ({
@@ -26,7 +26,6 @@ const useProjectsStore = defineStore('projects', {
             await sanity.fetch(query).then(
                 (response) => {
                     this.project = response;
-                    console.log(this.project);
             }).catch((error) => console.error(error));
         },  
     }
