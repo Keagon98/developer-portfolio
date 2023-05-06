@@ -1,4 +1,4 @@
-import sanity from '../client';
+import sanity from '../sanity/client';
 
 export let projectContent = [];
 export let project = [];

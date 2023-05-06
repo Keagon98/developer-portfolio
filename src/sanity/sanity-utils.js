@@ -1,0 +1,1 @@
+import sanity from "./client";
