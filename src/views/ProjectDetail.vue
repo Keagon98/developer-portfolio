@@ -82,7 +82,7 @@ const getProjectData = async(id: any) => {
     }).catch((error) => console.error(error));
 }
 
-let url: String = "";
+let url: string = "";
 const builder = imageUrlBuilder(sanity);
 const createUrl = (source: any) => {
     return url = builder.image(source).url();
