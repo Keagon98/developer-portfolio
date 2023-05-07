@@ -4,7 +4,7 @@
             <div class="content-wrapper">
                 <div class="col-12">
                     <div class="row">
-                        <h3 class="p-0" ref="techHeader">Tech Stack</h3>
+                        <h4 class="p-0 tech-header" ref="techHeader">Tech Stack</h4>
                     </div>
                     <div class="row">
                         <div class="card col-6 col-md-4 col-xl-3" v-for="tech in techStack" :key="tech.name">
@@ -45,6 +45,11 @@
 <style lang="scss" scoped>
 section {
     .content-wrapper {
+        .tech-header {
+            color: #FFFFFF;
+            font-size: calc(1.25em + .2vw) !important;
+            font-weight: 600 !important;
+        }
         .card {
             background-color: transparent;
             border: none;

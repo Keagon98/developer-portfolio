@@ -29,6 +29,7 @@ const routes = [
         component: () => import('../views/About.vue'),
         meta: {
           title: 'About | Keagon Brinkhuis - Frontend Developer',
+          description: 'The about page of Keagon Brinkhuis portfolio web app. Goes into detail about who I am as a developer.',
           metaTags: [
             {
               name: 'description',
@@ -63,25 +64,6 @@ const routes = [
             path: 'detail/:id',
             name: 'ProjectDetail',
             component: () => import('../views/ProjectDetail.vue'),
-            beforeEnter: (to: any) => {
-              const pathParamsId:String = to.params.id;
-              const store = useProjectsStore();
-              const slugArry: any[] = [];
-
-              const slug = store.projectContent.forEach((s: Project) => {
-                slugArry.push(s.slug?.current);
-              })
-
-              const correctPath = slugArry.findIndex((s) => s === pathParamsId);
-
-              if (correctPath === -1) return {
-                name: 'NotFound',
-                params: { pathMatch: to.path.split('/').slice(1) },
-                query: to.query,
-                hash: to.hash
-              } 
-
-            },
             meta: {
               title: 'Project Information | Keagon Brinkhuis - Frontend Developer',
               metaTags: [
@@ -94,6 +76,25 @@ const routes = [
                   content: 'The projects page of Keagon Brinkhuis portfolio web app. Showcases some of the projects I built.'
                 }
               ]
+            },
+            beforeEnter: (to: any) => {
+              const pathParamsId:String = to.params.id;
+              const store = useProjectsStore();
+              const slugArry: any[] = [];
+
+              const project = store.projectContent.forEach((p: Project) => {
+                slugArry.push(p.slug?.current);
+
+              });
+
+              const correctPath = slugArry.findIndex((s) => s === pathParamsId);
+
+              if (correctPath === -1) return {
+                name: 'NotFound',
+                params: { pathMatch: to.path.split('/').slice(1) },
+                query: to.query,
+                hash: to.hash
+              }; 
             },
           }
         ]

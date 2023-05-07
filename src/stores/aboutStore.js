@@ -13,7 +13,7 @@ const useAboutStore = defineStore('about', {
             await sanity.fetch(query).then(
                 (response) => {
                     response.forEach(obj => {
-                        this.aboutContent = obj.content.split(".", 3);
+                        this.aboutContent = obj.content.split(".", 4);
                     })
             }).catch((error) => console.error(error));
         },
