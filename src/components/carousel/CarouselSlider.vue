@@ -4,7 +4,7 @@
             <div class="content-wrapper">
                 <div class="col-12">
                     <div class="row mb-2">
-                        <h3 class="p-0" ref="experienceHeader">Experience</h3>
+                        <h4 class="p-0 experience-header" ref="experienceHeader">Experience</h4>
                     </div>
                     <div class="row my-2" ref="experienceCard">
                         <swiper
@@ -25,11 +25,11 @@
                                             <h2 class="slide-header">{{ exp.position }}</h2>
                                         </div>
                                         <div class="slider-main-content px-4">
-                                            <h5 class="slider-subheading">Frontend Duties</h5>
+                                            <h4 class="slider-subheading">Frontend Duties</h4>
                                             <ul class="text-white" v-for="duties in exp.frontend_duties" :key="duties._key">
                                                 <li>{{ duties.children[0].text }}</li>
                                             </ul>
-                                            <h5 class="slider-subheading">Backend Duties</h5>
+                                            <h4 class="slider-subheading">Backend Duties</h4>
                                             <ul class="text-white" v-for="duties in exp.backend_duties" :key="duties._key">
                                                 <li>
                                                     {{ duties.children[0].text }}
@@ -112,6 +112,12 @@ section {
         padding-left: 0;
         .content-wrapper {
             margin: 0 1em;
+
+            .experience-header {
+                color: #FFFFFF;
+                font-size: calc(1.25em + .2vw) !important;
+                font-weight: 600 !important;
+            }
             
             .slide-content-wrapper {
                 background: #16161A;

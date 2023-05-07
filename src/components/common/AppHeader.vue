@@ -2,7 +2,9 @@
     <header>
         <nav class="navbar">
             <div class="container my-2">
-                <img class="navbar-brand" src="/keagon_logo.svg" alt="">
+                <router-link to="/" aria-label="Go to homepage">
+                    <img class="navbar-brand" src="/keagon_logo.svg" alt="" />
+                </router-link>
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="mailto:keaggzb20v@gmail.com" target="_blank">Get in touch</a>

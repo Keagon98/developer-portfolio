@@ -5,7 +5,7 @@
                 <div class="content-wrapper">
                     <div class="col-12">
                         <div class="content">
-                            <h1>404</h1>
+                            <h1 class="four">4<span class="logo"><img src="/keagon_logo.svg" alt="Keagon logo"></span>4</h1>
                             <h4>Page not found.</h4>
                             <div class="button">
                                 <router-link class="btn-home" to="/">Go back Home</router-link>
@@ -39,6 +39,19 @@ main {
             padding: 7em 0;
             .content {
                 text-align: center;
+
+                .four {
+                    font-size: calc(3.6em + .1vw) !important;
+                }
+
+                .logo {
+                    width: 50px;
+
+                    img {
+                        width: calc(50px + .8vw);
+                        margin-bottom: .2em;
+                    }
+                }
 
                 .button {
                     margin: 1em;

@@ -1,5 +1,5 @@
 <template>
-    <app-layout :backgroundColor="'bg-dark-600'">
+    <app-layout-component :backgroundColor="'bg-dark-600'">
         <main>
             <div class="container px-4">
                 <div class="content-wrapper">
@@ -37,7 +37,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6">
-                                        <AppTechStack :techStack="techStack" :backgroundColor="'bg-dark-400'"/>
+                                        <app-tech-stack-component :techStack="techStack" :backgroundColor="'bg-dark-400'"/>
                                     </div>
                                 </div>
                             </div>
@@ -46,29 +46,30 @@
                 </div>
             </div>
         </main>
-    </app-layout>
+    </app-layout-component>
 </template>
 
 <script setup lang="ts">
 import AppLayout from '../layouts/AppLayout.vue';
 import AppTechStack from '../components/common/AppTechStack.vue';
+
 import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
-import useProjectsStore from '../stores/projectStore';
+import { projectdetailpageAnimation } from '../helpers/gsap-utils';
+
 import Project from '../types/Project';
-import { gsap } from 'gsap';
+
 import sanity from '../sanity/client'
 import imageUrlBuilder from '@sanity/image-url';
 
-
-const appLayout = AppLayout;
-const appTechStack = AppTechStack;
-const projectNameHeader = ref(null);
-const projectInfoCard = ref(null);
+const appLayoutComponent = AppLayout;
+const appTechStackComponent = AppTechStack;
 
 const route = useRoute();
-console.log(route);
 const id = route.params.id;
+
+const projectNameHeader = ref(null);
+const projectInfoCard = ref(null);
 
 let project = ref<Project>({});
 
@@ -77,25 +78,19 @@ const getProjectData = async(id: any) => {
     await sanity.fetch(query).then(
         (response) => {
             project.value = response;
-            CreateUrl(project.value.image);
-            route.meta.title = `${project.value.name} | Keagon Brinkhuis - Frontend Developer`;
-}).catch((error) => console.error(error));
+            createUrl(project.value.image);
+    }).catch((error) => console.error(error));
 }
 
-getProjectData(id);
-
-const builder = imageUrlBuilder(sanity);
-
 let url: String = "";
-const CreateUrl = (source: any) => {
+const builder = imageUrlBuilder(sanity);
+const createUrl = (source: any) => {
     return url = builder.image(source).url();
 }
 
-onMounted(() => {
-const tl = gsap.timeline({ delay: 0.35, ease: "ease-in" });
-tl.from(projectNameHeader.value, { x: '+45', autoAlpha: 0, duration: 0.40 });
-tl.from(projectInfoCard.value, { y: '+30', autoAlpha: 0, duration: 0.30 });     
-
+onMounted(() => {  
+    getProjectData(id);
+    projectdetailpageAnimation(projectNameHeader, projectInfoCard);
 });
 
 const techStack = [

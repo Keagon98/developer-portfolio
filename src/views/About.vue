@@ -1,5 +1,5 @@
 <template>
-    <app-layout :backgroundColor="'bg-dark-400'">
+    <app-layout-component :backgroundColor="'bg-dark-400'">
         <main>
             <div class="container px-4">
                 <div class="content-wrapper">
@@ -18,12 +18,12 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <AppTechStack :techStack="techStack" :backgroundColor="'bg-dark-600'"/>
+                                        <app-tech-stack-component :techStack="techStack" :backgroundColor="'bg-dark-600'"/>
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-12 col-lg-6">
                                     <div class="row">
-                                        <CarouselSlider :experienceData="experienceData"/>
+                                        <carousel-slider-component :experienceData="experienceData"/>
                                     </div>
                                 </div>
                             </div>
@@ -32,7 +32,7 @@
                 </div>
             </div>
         </main>
-    </app-layout>
+    </app-layout-component>
 </template>
 
 <script lang="ts" setup>
@@ -41,34 +41,30 @@
     import CarouselSlider from '../components/carousel/CarouselSlider.vue';
 
     import { onMounted, ref } from 'vue';
-    import { gsap } from 'gsap';
+    import { aboutpageAnimation } from '../helpers/gsap-utils';
 
     import useAboutStore  from '../stores/aboutStore';
-
-    const store = useAboutStore();
     
-    const appLayout = AppLayout;
-    const appTechStack = AppTechStack;
-    const carouselSlider = CarouselSlider;
+    const appLayoutComponent = AppLayout;
+    const appTechStackComponent = AppTechStack;
+    const carouselSliderComponent = CarouselSlider;
     
     const aboutHeader = ref(null);
     const contentText = ref(null);
 
+    const store = useAboutStore();
     store.fetchAboutData();
     store.fetchExperienceData();
 
     const data:any = ref();
     data.value = store.aboutContent;
+    console.log(data);
 
     const experienceData:any = ref();
     experienceData.value = store.experienceContent;
 
-    onMounted(() => { 
-
-        const tl = gsap.timeline({ delay: 0.50, ease: "ease-in" });
-        tl.from(aboutHeader.value, { x: '+55', autoAlpha: 0, duration: 0.50 });
-        tl.from(contentText.value, { y: '+30', autoAlpha: 0, duration: 0.35, stagger: 0.15});       
-
+    onMounted(() => {    
+        aboutpageAnimation(aboutHeader, contentText);
     });
      
     const techStack = [

@@ -1,5 +1,5 @@
 <template>
-    <app-layout :backgroundColor="'bg-dark-600'">
+    <app-layout-component :backgroundColor="'bg-dark-600'">
         <main>
             <div class="container px-4">
                 <div class="content-wrapper">
@@ -24,28 +24,29 @@
                 </div>
             </div>
         </main>
-    </app-layout>
+    </app-layout-component>
 </template>
 
 <script lang="ts" setup>
     import AppLayout from '../layouts/AppLayout.vue';
-    import { onBeforeMount, onMounted, ref } from 'vue';
-    import gsap from 'gsap';
+    import { onMounted, ref } from 'vue';
+    import { homepageAnimation } from '../helpers/gsap-utils';
 
-    const appLayout = AppLayout;
+    const appLayoutComponent = AppLayout;
 
     const landingHeadingOne = ref(null);
     const landingHeadingTwo = ref(null);
     const landingHeadingThree = ref(null);
     const icon = ref(null);
 
-    onMounted(() => {  
-        const tl = gsap.timeline({ delay: .40, ease: "ease-in", stagger: 0.35 });
+    const headings: Object[] = [];
 
-        tl.from(landingHeadingOne.value, { x: '+50', autoAlpha: 0, duration: 0.40 });
-        tl.from(landingHeadingTwo.value, { x: '+50', autoAlpha: 0, duration: 0.40 });
-        tl.from(landingHeadingThree.value, { x: '+50', autoAlpha: 0, duration: 0.40 });
-        tl.from(icon.value, { y: '+25', autoAlpha: 0, duration: 0.35, stagger: 0.10 });
+    headings.push(landingHeadingOne);
+    headings.push(landingHeadingTwo);
+    headings.push(landingHeadingThree);
+
+    onMounted(() => {  
+        homepageAnimation(headings, icon);
     });
 
     const socialIcons = [
