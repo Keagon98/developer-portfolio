@@ -84,7 +84,6 @@ const routes = [
 
               const project = store.projectContent.forEach((p: Project) => {
                 slugArry.push(p.slug?.current);
-
               });
 
               const correctPath = slugArry.findIndex((s) => s === pathParamsId);
