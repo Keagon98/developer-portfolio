@@ -58,8 +58,7 @@
 
     const data:any = ref();
     data.value = store.aboutContent;
-    console.log(data);
-
+    
     const experienceData:any = ref();
     experienceData.value = store.experienceContent;
 
