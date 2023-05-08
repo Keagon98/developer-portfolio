@@ -12,7 +12,7 @@
                             </div>
                             <div class="col-12">
                                 <div class="d-flex justify-content-start social-links">
-                                    <div ref="icon" class="social-link-icon" v-for="icon in socialIcons" :key="icon.name">
+                                    <div ref="iconSocials" class="social-link-icon" v-for="icon in socialIcons" :key="icon.name">
                                         <a :href="icon.link" target="_blank">
                                             <font-awesome-icon :icon="icon.icon" />
                                         </a>
@@ -37,7 +37,7 @@
     const landingHeadingOne = ref(null);
     const landingHeadingTwo = ref(null);
     const landingHeadingThree = ref(null);
-    const icon = ref(null);
+    const iconSocials = ref(null);
 
     const headings: Object[] = [];
 
@@ -46,7 +46,7 @@
     headings.push(landingHeadingThree);
 
     onMounted(() => {  
-        homepageAnimation(headings, icon);
+        homepageAnimation(headings, iconSocials);
     });
 
     const socialIcons = [
