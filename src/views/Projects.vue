@@ -40,8 +40,7 @@
     const projectCard = ref(null);
 
     const store = useProjectsStore();
-    store.fetchProjectsData();
-
+    
     let data: any[] = [];
     data = store.projectContent;
 

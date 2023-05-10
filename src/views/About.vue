@@ -53,8 +53,6 @@
     const contentText = ref(null);
 
     const store = useAboutStore();
-    store.fetchAboutData();
-    store.fetchExperienceData();
 
     const data:any = ref();
     data.value = store.aboutContent;

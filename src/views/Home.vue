@@ -29,6 +29,7 @@
 
 <script lang="ts" setup>
     import AppLayout from '../layouts/AppLayout.vue';
+
     import { onMounted, ref } from 'vue';
     import { homepageAnimation } from '../helpers/gsap-utils';
 
